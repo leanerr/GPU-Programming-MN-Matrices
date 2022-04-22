@@ -1,0 +1,113 @@
+m = 2, n = 2
+Enter some numbers and we create 2 matrix , A and B , first A : 
+3
+3
+4
+3
+Enter second matrix: 2
+4
+5
+6
+matrix A =
+3.0 3.0 
+4.0 3.0 
+matrix B =
+2.0 4.0 
+5.0 6.0 
+==18345== NVPROF is profiling process 18345, command: ./mat_example 2 2
+The result is: 
+5.0 7.0 
+0.0 0.0 
+==18345== Profiling application: ./mat_example 2 2
+==18345== Profiling result:
+            Type  Time(%)      Time     Calls       Avg       Min       Max  Name
+ GPU activities:   38.96%  3.8400us         2  1.9200us  1.5680us  2.2720us  [CUDA memcpy HtoD]
+                   35.06%  3.4560us         1  3.4560us  3.4560us  3.4560us  matrix_sum(float*, float*, float*, int, int)
+                   25.97%  2.5600us         1  2.5600us  2.5600us  2.5600us  [CUDA memcpy DtoH]
+      API calls:   99.56%  278.19ms         3  92.730ms  2.7840us  278.18ms  cudaMalloc
+                    0.19%  531.52us         1  531.52us  531.52us  531.52us  cuDeviceTotalMem
+                    0.08%  233.51us        96  2.4320us     120ns  94.774us  cuDeviceGetAttribute
+                    0.05%  149.00us         1  149.00us  149.00us  149.00us  cudaLaunchKernel
+                    0.05%  139.07us         3  46.355us  6.2560us  116.55us  cudaFree
+                    0.04%  104.43us         3  34.810us  13.150us  67.318us  cudaMemcpy
+                    0.02%  46.203us         1  46.203us  46.203us  46.203us  cuDeviceGetName
+                    0.00%  8.9010us         1  8.9010us  8.9010us  8.9010us  cudaThreadSynchronize
+                    0.00%  6.7680us         1  6.7680us  6.7680us  6.7680us  cuDeviceGetPCIBusId
+                    0.00%  1.9550us         3     651ns     151ns     968ns  cuDeviceGetCount
+                    0.00%  1.8480us         2     924ns     329ns  1.5190us  cuDeviceGet
+
+
+
+
+
+m = 4, n = 4
+Enter some numbers and we create 2 matrix , A and B , first A : 
+5
+3
+5
+
+88
+3
+
+8
+55
+5
+5
+5
+5
+5
+
+8
+3
+5
+5
+Enter second matrix: 6
+4
+7
+3
+
+52
+5
+3
+5
+8
+6
+2
+2
+2
+2
+2
+2
+matrix A =
+5.0 3.0 5.0 88.0 
+3.0 8.0 55.0 5.0 
+5.0 5.0 5.0 5.0 
+8.0 3.0 5.0 5.0 
+matrix B =
+6.0 4.0 7.0 3.0 
+52.0 5.0 3.0 5.0 
+8.0 6.0 2.0 2.0 
+2.0 2.0 2.0 2.0 
+==18580== NVPROF is profiling process 18580, command: ./mat_example 4 4
+The result is: 
+11.0 7.0 12.0 91.0 
+0.0 0.0 0.0 0.0 
+0.0 0.0 0.0 0.0 
+0.0 0.0 0.0 0.0 
+==18580== Profiling application: ./mat_example 4 4
+==18580== Profiling result:
+            Type  Time(%)      Time     Calls       Avg       Min       Max  Name
+ GPU activities:   38.39%  3.8080us         2  1.9040us  1.5360us  2.2720us  [CUDA memcpy HtoD]
+                   34.84%  3.4560us         1  3.4560us  3.4560us  3.4560us  matrix_sum(float*, float*, float*, int, int)
+                   26.77%  2.6560us         1  2.6560us  2.6560us  2.6560us  [CUDA memcpy DtoH]
+      API calls:   99.35%  207.05ms         3  69.017ms  2.7250us  207.04ms  cudaMalloc
+                    0.27%  562.43us         1  562.43us  562.43us  562.43us  cuDeviceTotalMem
+                    0.11%  220.27us         1  220.27us  220.27us  220.27us  cudaLaunchKernel
+                    0.10%  210.37us         3  70.123us  5.2430us  152.40us  cudaFree
+                    0.10%  201.64us        96  2.1000us     134ns  82.171us  cuDeviceGetAttribute
+                    0.03%  65.942us         3  21.980us  13.317us  26.329us  cudaMemcpy
+                    0.02%  46.977us         1  46.977us  46.977us  46.977us  cuDeviceGetPCIBusId
+                    0.01%  28.059us         1  28.059us  28.059us  28.059us  cuDeviceGetName
+                    0.01%  14.353us         1  14.353us  14.353us  14.353us  cudaThreadSynchronize
+                    0.00%  2.0570us         3     685ns     160ns  1.0040us  cuDeviceGetCount
+                    0.00%  1.6880us         2     844ns     267ns  1.4210us  cuDeviceGet
